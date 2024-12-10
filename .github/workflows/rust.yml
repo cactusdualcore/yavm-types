@@ -11,9 +11,7 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Build
@@ -28,3 +26,11 @@ jobs:
       uses: EmbarkStudios/cargo-deny-action@v1.6.3
       with:
         manifest-path: ./Cargo.toml
+  clippy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - run: cargo clippy --all-features -- -Dwarnings
