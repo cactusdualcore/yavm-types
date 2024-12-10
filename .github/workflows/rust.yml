@@ -22,3 +22,5 @@ jobs:
       run: cargo test --verbose
     - name: cargo-deny
       uses: EmbarkStudios/cargo-deny-action@v1.6.3
+      with:
+        rust-version: 1.83.0
