@@ -25,3 +25,5 @@ jobs:
     steps:
     - name: cargo-deny
       uses: EmbarkStudios/cargo-deny-action@v1.6.3
+      with:
+        manifest-path: ./Cargo.toml
